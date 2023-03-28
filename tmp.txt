@@ -1,0 +1,56 @@
+for(uint64_t i = 0; i < Cache[lower].CacheSet.size(); ++i)
+			{
+				if(rm0Vec.size()==killnum) break;
+				if(Cache[lower].CacheSet[cacheIndex].header[0] == timestrapMin)
+				{
+					if(Cache[lower].CacheSet[cacheIndex].existFlag == 1)
+					{
+						/*killBlock tmp;
+						tmp.index = cacheIndex;
+						tmp.minK = Cache[lower].CacheSet[cacheIndex].header[2];
+						killVector.push_back(tmp);*/
+
+						rm0Vec.push_back(Cache[lower].CacheSet[cacheIndex].filename);
+
+						//std::cout<<"choose "<<Cache[lower].CacheSet[cacheIndex].header[0]<<std::endl;
+						//Cache[lower].CacheSet[cacheIndex].existFlag = 0;
+					}
+				}
+				++cacheIndex;
+			}
+			/*if(killVector.size() == 1)
+			{
+				rm0Vec.push_back(Cache[lower].CacheSet[killVector[0].index].filename);
+			}
+			//multi file timestrap are the same:
+			//choose ones whose key is smaller
+			else
+			{
+				if(killVector.size() + rm0Vec.size() < killnum)
+				{
+					int length = killVector.size();
+					for(int p = 0; p < length; ++p)
+					{
+						rm0Vec.push_back(Cache[lower].CacheSet[killVector[p].index].filename);
+					}
+				}
+				else
+				{
+					int miniKey = 2147483647;
+					int miniIndex = 0;
+					int length = killVector.size();
+					int indexp = 0;
+					for(int p = 0; p < length; ++p)
+					{
+						if(killVector[indexp].minK < miniKey)
+						{
+							miniKey = killVector[indexp].minK;
+							miniIndex = indexp;
+						}
+						++indexp;
+					}
+					indexp = 0;
+					rm0Vec.push_back(Cache[lower].CacheSet[killVector[miniIndex].index].filename);
+				}
+
+			}*/
